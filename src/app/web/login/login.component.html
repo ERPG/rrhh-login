@@ -1,0 +1,20 @@
+<div class="rl-login">
+  <div class="rl-login__cards">
+    <app-card [icon]="admin" [title]="'Administrator'" [text]="'Lorem ipsum'"></app-card>
+    <app-card [icon]="agent" [title]="'Agent'" [text]="'Lorem ipsum'"></app-card>
+  </div>
+  <form class="rl-login__form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()" autocomplete="off">
+    <div class="rl-login__container">
+      <app-label [text]="'Email'"></app-label>
+      <app-input [type]="'email'" [id]="'email'" [name]="'email'" [control]="'email'" [placeholder]="'Email'"></app-input>
+      <app-form-validations [control]="loginForm.controls.email"></app-form-validations>
+    </div>
+    <div class="rl-login__container">
+      <app-label [text]="'Password'"></app-label>
+      <app-input [type]="'password'" [id]="'password'" [name]="'password'" [control]="'password'" [placeholder]="'password'"></app-input>
+    </div>
+    <app-form-validations [control]="loginForm.controls.password"></app-form-validations>
+    <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Login'">
+    </app-button>
+  </form>
+</div>

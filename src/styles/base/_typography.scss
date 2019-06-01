@@ -1,3 +1,4 @@
+$fontpath: '../../assets/fonts/';
 // Open Sans LIGHT
 @font-face {
   font-family: 'OpenSans';
@@ -35,41 +36,4 @@
     url($fontpath+'OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
   font-weight: 700;
   font-style: normal;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-li,
-b,
-strong {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
-}
-h1 {
-  font-size: 22px;
-}
-h2 {
-  font-size: 20px;
-}
-h3 {
-  font-size: 18px;
-}
-h4 {
-  font-size: 16px;
-}
-h5 {
-  font-size: 14px;
-}
-b,
-strong {
-  font-weight: 700;
 }
