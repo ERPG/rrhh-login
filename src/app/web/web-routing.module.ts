@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/app/web/login/login.component';
 import { HomeComponent } from 'src/app/web/home/home.component';
 import { CommonModule } from '@angular/common';
-import { AuthGuardService } from 'src/app/core/auth/auth-guard.service';
 
 const webRoutes: Routes = [
   {
@@ -27,7 +26,7 @@ const webRoutes: Routes = [
     RouterModule.forChild(webRoutes)
   ],
   providers: [
-    AuthGuardService
+    // AuthGuardService
   ],
   exports: [RouterModule]
 })

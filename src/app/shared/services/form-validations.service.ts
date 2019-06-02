@@ -4,15 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FormValidationsService {
-
-  constructor() { }
+  constructor() {}
 
   static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
     const config = {
-      'required': 'Required',
-      'invalidEmailAddress': 'Invalid email address',
-      'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.',
-      'minlength': `Minimum length ${validatorValue.requiredLength}`,
+      required: 'Required',
+      invalidEmailAddress: 'Invalid email address',
+      invalidPassword: 'Invalid password. Password must be at least 6 characters long, and contain a number.',
+      minlength: `Minimum length ${validatorValue.requiredLength}`
     };
 
     return config[validatorName];
@@ -20,10 +19,14 @@ export class FormValidationsService {
 
   static emailValidator(control) {
     // RFC 2822 compliant regex
-    if (control.value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
+    if (
+      control.value.match(
+        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      )
+    ) {
       return null;
     } else {
-      return { 'invalidEmailAddress': true };
+      return { invalidEmailAddress: true };
     }
   }
 
@@ -33,8 +36,7 @@ export class FormValidationsService {
     if (control.value.match(/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,100}$/)) {
       return null;
     } else {
-      return { 'invalidPassword': true };
+      return { invalidPassword: true };
     }
   }
-
 }

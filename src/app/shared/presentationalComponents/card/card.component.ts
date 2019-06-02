@@ -11,10 +11,8 @@ export class CardComponent implements OnInit {
   @Input() icon;
   @Input() title;
   @Input() text;
-  constructor() { }
+  @Input() selected;
+  constructor() {}
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }
