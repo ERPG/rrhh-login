@@ -1,0 +1,21 @@
+@import 'main.scss';
+
+.rl-header {
+  background: $color-white;
+  min-height: 3.75em;
+  min-width: auto;
+  border: 1px solid $color-black;
+
+  &__actions {
+    background: $color-black;
+    padding: 10px 5px;
+  }
+
+  &__text {
+    color: $color-white;
+  }
+
+  &__logo {
+    padding: 10px 0;
+  }
+}

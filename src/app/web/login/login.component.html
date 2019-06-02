@@ -8,7 +8,6 @@
         (click)="getRole($event)"
         [selected]="selected === 'Admin' ? 'selected' : ''"
       ></app-card>
-      {{ selected }}
       <app-card
         [icon]="agent"
         [title]="'Agente'"
@@ -41,7 +40,14 @@
         ></app-input>
         <app-form-validations [control]="loginForm.controls.password"></app-form-validations>
       </div>
+      <div class="rl-login__inner">
+        <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Login'"> </app-button>
+      </div>
     </div>
-    <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Login'"> </app-button>
   </form>
+</div>
+
+<!-- tooltip info -->
+<div id="rl-tooltip" [@visible]="loadTooltip ? 1 : 0">
+  <app-tooltip [user]="user" [error]="error"></app-tooltip>
 </div>

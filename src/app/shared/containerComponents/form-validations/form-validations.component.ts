@@ -8,15 +8,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./form-validations.component.scss']
 })
 export class FormValidationsComponent implements OnInit {
-
   @Input() control: FormControl;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   get errorMessage() {
-    if (this.control.errors != null) {
+    if (this.control && this.control.errors !== null) {
       for (const propertyName in this.control.errors) {
         if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
           return FormValidationsService.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
@@ -25,5 +24,4 @@ export class FormValidationsComponent implements OnInit {
     }
     return null;
   }
-
 }

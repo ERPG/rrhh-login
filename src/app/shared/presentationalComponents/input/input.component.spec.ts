@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule, FormsModule, FormGroupDirective, ControlContainer } from '@angular/forms';
 import { InputComponent } from './input.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('InputComponent', () => {
   let component: InputComponent;
@@ -8,9 +9,11 @@ describe('InputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputComponent ]
-    })
-    .compileComponents();
+      declarations: [InputComponent],
+      imports: [FontAwesomeModule, FormsModule, ReactiveFormsModule],
+      providers: [FormGroupDirective]
+      // { provide: ControlContainer, useExisting: FormGroupDirective }
+    }).compileComponents();
   }));
 
   beforeEach(() => {

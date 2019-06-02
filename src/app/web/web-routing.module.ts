@@ -7,27 +7,22 @@ import { CommonModule } from '@angular/common';
 const webRoutes: Routes = [
   {
     path: '',
-    children:
-      [{
+    children: [
+      {
         path: 'login',
         component: LoginComponent
       },
       {
         path: '',
         component: HomeComponent
-      },
-      ]
+      }
+    ]
   }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(webRoutes)
-  ],
-  providers: [
-    // AuthGuardService
-  ],
+  imports: [CommonModule, RouterModule.forChild(webRoutes)],
+  providers: [],
   exports: [RouterModule]
 })
-export class WebRoutingModule { }
+export class WebRoutingModule {}

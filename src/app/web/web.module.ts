@@ -5,15 +5,11 @@ import { HomeComponent } from './home/home.component';
 import { WebRoutingModule } from 'src/app/web/web-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [LoginComponent, HomeComponent],
-  imports: [
-    CommonModule,
-    WebRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule
-  ]
+  imports: [CommonModule, HttpClientModule, WebRoutingModule, FormsModule, ReactiveFormsModule, SharedModule],
+  exports: [LoginComponent, HomeComponent]
 })
-export class WebModule { }
+export class WebModule {}

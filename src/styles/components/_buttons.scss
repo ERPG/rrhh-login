@@ -1,16 +1,18 @@
 @import '../base/_variables.scss';
 
 .rl-button {
-    display: inline-block;
-    padding: 8px 10px;
-    color: $color-white;
-    border: 0;
-    font-size: 1.25em;
-    line-height: 29px!important;
-    min-width: 9.0625em;
-    min-height: 45px;
-    text-align: center;
-    font-weight: 700;
-    cursor: pointer;
-    -webkit-appearance: none;
+  display: inline-block;
+  padding: 5px 0px;
+  margin-top: 6px;
+  color: $color-white;
+  border: 0;
+  font-size: $font-size-main;
+  line-height: 29px;
+  width: 100%;
+  min-height: $height-form-elements;
+  text-align: center;
+  font-weight: 500;
+  background: $brand-color-secondary;
+  cursor: pointer;
+  -webkit-appearance: none;
 }

@@ -1,0 +1,17 @@
+@import '../base/_variables.scss';
+
+.rl-card {
+  border: 1px solid $color-black;
+  background: transparent;
+  padding: 60px 10px;
+  // margin: 30px 0px;
+  width: 200px;
+  height: auto;
+  font-size: $font-size-main;
+  text-align: center;
+  display: inline-block;
+  &__text,
+  &__title {
+    margin: 20px 0px;
+  }
+}

@@ -1,0 +1,37 @@
+@import 'components/_forms.scss';
+
+.rl-login {
+  position: relative;
+  // max-width: 50%;
+  max-width: 600px;
+  // width: 100%;
+  margin: 0 auto;
+  height: 530px;
+  margin-top: 50px;
+  &__cards {
+    // display: flex;
+    // justify-content: space-between;
+    width: 100%;
+  }
+  &__inner {
+    padding: 10px 0;
+  }
+  &__container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+::ng-deep .rl-button {
+  margin-top: 8px 0;
+}
+
+::ng-deep app-card:nth-child(1) .rl-card {
+  position: absolute;
+  left: 0;
+}
+::ng-deep app-card:nth-child(2) .rl-card {
+  position: absolute;
+  right: 0;
+}

@@ -8,17 +8,13 @@ import { FormControl, ControlContainer, FormGroupDirective } from '@angular/form
   viewProviders: [{ provide: ControlContainer, useExisting: FormGroupDirective }]
 })
 export class InputComponent implements OnInit {
-
   @Input() control: FormControl;
   @Input() id;
   @Input() type;
   @Input() placeholder;
   @Input() name;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
-
-  onKey(e: KeyboardEvent) { }
-
+  ngOnInit() {}
 }

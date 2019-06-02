@@ -1,4 +1,5 @@
 <p>
-  Hello Welcome to Credimarket
-  <a [routerLink]="'/login'" href="">Go to login!</a>
+  Hello {{ user }}, {{ text }}
+  <!-- <a *ngIf="!user" [routerLink]="'/login'" href="">Go to login!</a> -->
+  <a *ngIf="user" href="" (click)="logout()">Log out</a>
 </p>
