@@ -1,1 +1,7 @@
 @import 'components/_buttons.scss';
+
+button[disabled] {
+  background: #d4ebf2;
+  pointer-events: none;
+  box-shadow: none;
+}

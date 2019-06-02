@@ -15,4 +15,10 @@
   background: $brand-color-secondary;
   cursor: pointer;
   -webkit-appearance: none;
+  -webkit-box-shadow: 5px 7px 7px -2px black;
+  -moz-box-shadow: 5px 7px 7px -2px black;
+  box-shadow: 5px 7px 7px -2px black;
+  &:hover {
+    background: #9bc2cf;
+  }
 }

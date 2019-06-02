@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +12,8 @@ export class CardComponent implements OnInit {
   @Input() title;
   @Input() text;
   @Input() selected;
+  public checkIcon = faCheckCircle;
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,7 +1,7 @@
 // GENERIC - colors
 $brand-color-primary: #f6c364 !default;
-$brand-color-primary-light: lighten($brand-color-primary, 20%);
-$brand-color-primary-lighter: lighten($brand-color-primary, 65%);
+$brand-color-primary-light: lighten($brand-color-primary, 20%) !default;
+$brand-color-primary-lighter: lighten($brand-color-primary, 65%) !default;
 $brand-color-secondary: #5db3e6 !default;
 $brand-color-secondary-light: lighten($brand-color-secondary, 20%);
 $brand-color-secondary-lighter: lighten($brand-color-secondary, 65%);

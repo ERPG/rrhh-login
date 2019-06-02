@@ -6,14 +6,14 @@
         [title]="'Administrador'"
         [text]="'Lorem ipsum'"
         (click)="getRole($event)"
-        [selected]="selected === 'Admin' ? 'selected' : ''"
+        [selected]="!reset && selected === 'Admin' ? 'selected' : ''"
       ></app-card>
       <app-card
         [icon]="agent"
         [title]="'Agente'"
         [text]="'Lorem ipsum'"
         (click)="getRole($event)"
-        [selected]="selected === 'Agent' ? 'selected' : ''"
+        [selected]="!reset && selected === 'Agent' ? 'selected' : ''"
       ></app-card>
       <app-input [type]="'hidden'" [id]="'role'" [name]="'role'" [control]="'role'" [placeholder]="'role'"></app-input>
     </div>

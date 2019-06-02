@@ -72,7 +72,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.submitted = true;
     const { email, password, role } = this.loginForm.value;
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -88,6 +87,7 @@ export class LoginComponent implements OnInit {
       (response: string) => {
         this.loadTooltip = 1;
         this.error = response['error']['message'];
+        this.submitted = true;
         // Reset form
         this.resetForm();
       }

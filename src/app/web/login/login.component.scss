@@ -3,10 +3,10 @@
 .rl-login {
   position: relative;
   // max-width: 50%;
-  max-width: 600px;
+  max-width: 500px;
   // width: 100%;
   margin: 0 auto;
-  height: 530px;
+  height: 590px;
   margin-top: 50px;
   &__cards {
     // display: flex;
@@ -16,6 +16,7 @@
   &__inner {
     padding: 10px 0;
   }
+
   &__container {
     position: absolute;
     width: 100%;

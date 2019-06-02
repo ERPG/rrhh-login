@@ -1,5 +1,12 @@
 <div class="rl-card" [ngClass]="selected">
-  <fa-icon class="rl-card__icon" [icon]="icon" alt="Card icon"></fa-icon>
+  <fa-icon
+    class="rl-card__icon"
+    [ngClass]="selected ? 'rl-card__icon--show' : 'rl-card__icon--hide'"
+    [icon]="checkIcon"
+  ></fa-icon>
+  <div class="rl-card__container">
+    <fa-icon class="rl-card__icon" [icon]="icon" alt="Card icon"></fa-icon>
+  </div>
   <div class="rl-card__body">
     <h5 class="rl-card__title">{{ title }}</h5>
     <p class="rl-card__text">{{ text }}</p>
