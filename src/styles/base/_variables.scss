@@ -10,6 +10,7 @@ $color-warning: #cf5252 !default;
 $color-success: #61be49 !default;
 $color-white: #fff !default;
 $color-black: #24282b !default;
+$color-black-light: lighten($color-black, 20%) !default;
 
 // // Generic - Layout
 $height-form-elements: 30px;

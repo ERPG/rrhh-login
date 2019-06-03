@@ -53,8 +53,8 @@ export class BackendInterceptor implements HttpInterceptor {
                 role = x.role === request.body.role;
                 return userData && role;
               });
-              if (!userData) return error('email or password is incorrect');
-              if (!role) return error('You don´t have permission with this role');
+              if (!userData) return error('email o contraseña incorrecta');
+              if (!role) return error('No tienes permiso con este Rol');
               return ok({
                 id: user.id,
                 email: user.email,
@@ -63,6 +63,10 @@ export class BackendInterceptor implements HttpInterceptor {
                 role: user.role,
                 token: `fake-jwt-token.${user.role}`
               });
+            }
+            // get all users
+            if (request.url.endsWith('/users') && request.method === 'GET') {
+              return ok(users);
             }
             // pass through any requests not handled above
             return next.handle(request);

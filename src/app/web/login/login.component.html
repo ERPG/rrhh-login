@@ -41,10 +41,14 @@
         <app-form-validations [control]="loginForm.controls.password"></app-form-validations>
       </div>
       <div class="rl-login__inner">
-        <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Login'"> </app-button>
+        <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Iniciar sesión'"> </app-button>
       </div>
     </div>
   </form>
+</div>
+<!-- forgot password -->
+<div class="rl-link" [@visible]="loadTooltip ? 0 : 1">
+  <a href="" [routerLink]="'/forgot-password'">¿ Olvidaste tu contraseña ?</a>
 </div>
 
 <!-- tooltip info -->

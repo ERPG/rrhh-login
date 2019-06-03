@@ -8,10 +8,10 @@ export class FormValidationsService {
 
   static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
     const config = {
-      required: 'Required',
-      invalidEmailAddress: 'Invalid email address',
-      invalidPassword: 'Invalid password. Password must be at least 6 characters long, and contain a number.',
-      minlength: `Minimum length ${validatorValue.requiredLength}`
+      required: 'Requerido',
+      invalidEmailAddress: 'Direccion de email invalida',
+      invalidPassword: 'Contraseña invalida, debe contener al menos 6 caracteres y uno nuéerico',
+      minlength: `minimo requerido ${validatorValue.requiredLength}`
     };
 
     return config[validatorName];
@@ -20,7 +20,9 @@ export class FormValidationsService {
   static emailValidator(control) {
     // RFC 2822 compliant regex
     if (
-      control && control.value && control.value.match(
+      control &&
+      control.value &&
+      control.value.match(
         /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
       )
     ) {
