@@ -1,9 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule, FormsModule, FormGroupDirective, ControlContainer } from '@angular/forms';
-import { InputComponent } from './input.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import {
+  ReactiveFormsModule,
+  FormsModule,
+  FormGroupDirective,
+  ControlContainer
+} from "@angular/forms";
+import { InputComponent } from "./input.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-describe('InputComponent', () => {
+describe("InputComponent", () => {
   let component: InputComponent;
   let fixture: ComponentFixture<InputComponent>;
 
@@ -11,8 +17,8 @@ describe('InputComponent', () => {
     TestBed.configureTestingModule({
       declarations: [InputComponent],
       imports: [FontAwesomeModule, FormsModule, ReactiveFormsModule],
-      providers: [FormGroupDirective]
-      // { provide: ControlContainer, useExisting: FormGroupDirective }
+      providers: [{ provide: ControlContainer, useValue: FormGroupDirective }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -22,7 +28,7 @@ describe('InputComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

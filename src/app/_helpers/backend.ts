@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   HttpRequest,
   HttpResponse,
@@ -6,11 +6,11 @@ import {
   HttpEvent,
   HttpInterceptor,
   HTTP_INTERCEPTORS
-} from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+} from "@angular/common/http";
+import { Observable, of, throwError } from "rxjs";
+import { delay, mergeMap, materialize, dematerialize } from "rxjs/operators";
 
-import { User, Role } from '../core/models/models';
+import { User, Role } from "../core/models/models";
 
 @Injectable()
 export class BackendInterceptor implements HttpInterceptor {
@@ -18,25 +18,26 @@ export class BackendInterceptor implements HttpInterceptor {
     const users: User[] = [
       {
         id: 1,
-        email: 'oriol@credimarket.com',
-        password: '12345678',
-        firstName: 'Oriol',
-        lastName: 'Cardona',
+        email: "oriol@credimarket.com",
+        password: "12345678",
+        firstName: "Oriol",
+        lastName: "Cardona",
         role: Role.Admin || Role.Agent
       },
       {
         id: 2,
-        email: 'ernesto@credimarket.com',
-        password: '12345678',
-        firstName: 'Ernesto',
-        lastName: 'Parra',
+        email: "noreplyernesto@gmail.com",
+        password: "12345678",
+        firstName: "Ernesto",
+        lastName: "Parra",
         role: Role.Agent
       }
     ];
 
-    const authHeader = request.headers.get('Authorization');
-    const isLoggedIn = authHeader && authHeader.startsWith('Bearer fake-jwt-token');
-    const roleString = isLoggedIn && authHeader.split('.')[1];
+    const authHeader = request.headers.get("Authorization");
+    const isLoggedIn =
+      authHeader && authHeader.startsWith("Bearer fake-jwt-token");
+    const roleString = isLoggedIn && authHeader.split(".")[1];
     const role = roleString ? Role[roleString] : null;
 
     // Api call Simulation
@@ -45,16 +46,21 @@ export class BackendInterceptor implements HttpInterceptor {
         .pipe(
           mergeMap(() => {
             // authentication
-            if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
+            if (
+              request.url.endsWith("/users/authenticate") &&
+              request.method === "POST"
+            ) {
               let role: boolean;
               let userData: boolean;
               const user = users.find((x: any) => {
-                userData = x.email === request.body.email && x.password === request.body.password;
+                userData =
+                  x.email === request.body.email &&
+                  x.password === request.body.password;
                 role = x.role === request.body.role;
                 return userData && role;
               });
-              if (!userData) return error('email o contraseña incorrecta');
-              if (!role) return error('No tienes permiso con este Rol');
+              if (!userData) return error("email o contraseña incorrecta");
+              if (!role) return error("No tienes permiso con este Rol");
               return ok({
                 id: user.id,
                 email: user.email,
@@ -65,7 +71,7 @@ export class BackendInterceptor implements HttpInterceptor {
               });
             }
             // get all users
-            if (request.url.endsWith('/users') && request.method === 'GET') {
+            if (request.url.endsWith("/users") && request.method === "GET") {
               return ok(users);
             }
             // pass through any requests not handled above
@@ -85,7 +91,7 @@ export class BackendInterceptor implements HttpInterceptor {
     }
 
     function unauthorised() {
-      return throwError({ status: 401, error: { message: 'Unauthorised' } });
+      return throwError({ status: 401, error: { message: "Unauthorised" } });
     }
 
     function error(message) {

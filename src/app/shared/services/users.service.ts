@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { User } from 'src/app/core/models/models';
-import { first } from 'rxjs/internal/operators/first';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { User } from "src/app/core/models/models";
+import { first } from "rxjs/internal/operators/first";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UsersService {
   private users: User[];
-  private apiUrl = 'http://localhost:4200';
+  private apiUrl = "http://localhost:4200";
   private user: any;
   constructor(private http: HttpClient) {}
 
@@ -20,15 +20,17 @@ export class UsersService {
     return this.user;
   }
 
-  async getUserByEmail(email: string) {
-    const a = this.getAll().subscribe(elem => {
-      elem.find(elem => (elem.email === email ? (this.user = elem) : ''));
-      console.log(elem);
-      this.getUser();
-    });
-    this.getUser();
-    // console.log('users ======');
-    // console.log(this.user);
-    // this.user;
+  async getUserByEmail(email: string): Promise<User> | undefined {
+    let userData: any;
+    const users = await this.getAll().toPromise();
+    if (users) {
+      users.find(
+        (elem): any => {
+          elem.email === email ? (userData = elem) : (userData = undefined);
+        }
+      );
+      return userData;
+    }
+    return undefined;
   }
 }

@@ -1,4 +1,4 @@
-<p>
+<p class="rl-app__text">
   Hello {{ user }}, {{ text }}
   <a *ngIf="!user" [routerLink]="'/login'" href="">Go to login!</a>
   <a *ngIf="user" href="" (click)="logout()">Log out</a>

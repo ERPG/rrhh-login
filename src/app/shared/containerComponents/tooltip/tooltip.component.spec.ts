@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TooltipComponent } from './tooltip.component';
+import { TooltipComponent } from "./tooltip.component";
 
-describe('TooltipErrorComponent', () => {
+describe("TooltipErrorComponent", () => {
   let component: TooltipComponent;
   let fixture: ComponentFixture<TooltipComponent>;
 
@@ -18,7 +18,7 @@ describe('TooltipErrorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

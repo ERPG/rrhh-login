@@ -1,16 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { FormValidationsComponent } from './form-validations.component';
-
-describe('FormValidationsComponent', () => {
+import { FormValidationsComponent } from "./form-validations.component";
+import { FormControl } from "@angular/forms";
+let control: FormControl;
+let mock = {
+  ...control,
+  errors: {
+    invalidPassword: true,
+    required: true
+  }
+};
+describe("FormValidationsComponent", () => {
   let component: FormValidationsComponent;
   let fixture: ComponentFixture<FormValidationsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormValidationsComponent ]
-    })
-    .compileComponents();
+      declarations: [FormValidationsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +26,7 @@ describe('FormValidationsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

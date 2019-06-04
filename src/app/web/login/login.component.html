@@ -1,5 +1,10 @@
 <div class="rl-login">
-  <form class="rl-login__form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()" autocomplete="off">
+  <form
+    class="rl-login__form"
+    [formGroup]="loginForm"
+    (ngSubmit)="loginForm.valid && login()"
+    autocomplete="off"
+  >
     <div class="rl-login__cards">
       <app-card
         [icon]="admin"
@@ -15,7 +20,13 @@
         (click)="getRole($event)"
         [selected]="!reset && selected === 'Agent' ? 'selected' : ''"
       ></app-card>
-      <app-input [type]="'hidden'" [id]="'role'" [name]="'role'" [control]="'role'" [placeholder]="'role'"></app-input>
+      <app-input
+        [type]="'hidden'"
+        [id]="'role'"
+        [name]="'role'"
+        [control]="'role'"
+        [placeholder]="'role'"
+      ></app-input>
     </div>
     <div class="rl-login__container">
       <div class="rl-login__inner">
@@ -27,7 +38,9 @@
           [control]="'email'"
           [placeholder]="'Email'"
         ></app-input>
-        <app-form-validations [control]="loginForm.controls.email"></app-form-validations>
+        <app-form-validations
+          [control]="loginForm.controls.email"
+        ></app-form-validations>
       </div>
       <div class="rl-login__inner">
         <app-label [text]="'Password'"></app-label>
@@ -38,10 +51,17 @@
           [control]="'password'"
           [placeholder]="'password'"
         ></app-input>
-        <app-form-validations [control]="loginForm.controls.password"></app-form-validations>
+        <app-form-validations
+          [control]="loginForm.controls.password"
+        ></app-form-validations>
       </div>
       <div class="rl-login__inner">
-        <app-button [type]="'submit'" [disabled]="!loginForm.valid" [text]="'Iniciar sesión'"> </app-button>
+        <app-button
+          [type]="'submit'"
+          [disabled]="!loginForm.valid"
+          [text]="'Iniciar sesión'"
+        >
+        </app-button>
       </div>
     </div>
   </form>

@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LabelComponent } from './label.component';
+import { LabelComponent } from "./label.component";
 
-describe('LabelComponent', () => {
+describe("LabelComponent", () => {
   let component: LabelComponent;
   let fixture: ComponentFixture<LabelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LabelComponent ]
-    })
-    .compileComponents();
+      declarations: [LabelComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,15 @@ describe('LabelComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
+  });
+  it("Should show text passed as a parameter", () => {
+    component.text = "fake text";
+    const elem = fixture.debugElement.nativeElement.querySelector(
+      ".rl-login__label"
+    );
+    fixture.detectChanges();
+    expect(elem.innerText).toBe("fake text");
   });
 });
