@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { User } from "src/app/core/models/models";
-import { first } from "rxjs/internal/operators/first";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/core/models/models';
+import { first } from 'rxjs/internal/operators/first';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class UsersService {
   private users: User[];
-  private apiUrl = "http://localhost:4200";
+  private apiUrl = 'http://localhost:4200';
   private user: any;
   constructor(private http: HttpClient) {}
 

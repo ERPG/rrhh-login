@@ -9,15 +9,21 @@
 
   &__actions {
     background: $color-black;
-    padding: 10px 5px;
+    padding: 10px 20px;
   }
 
   &__text {
     color: $color-white;
+    max-width: 100%;
+    height: auto;
   }
 
   &__logo {
-    padding: 10px 0;
+    padding: 10px 20px;
     background: $color-white;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }

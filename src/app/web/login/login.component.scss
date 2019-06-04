@@ -1,16 +1,9 @@
 @import 'components/_forms.scss';
 
 .rl-login {
-  position: relative;
-  // max-width: 50%;
-  max-width: 500px;
-  // width: 100%;
   margin: 0 auto;
   height: 590px;
-  margin-top: 50px;
   &__cards {
-    // display: flex;
-    // justify-content: space-between;
     width: 100%;
   }
   &__inner {
