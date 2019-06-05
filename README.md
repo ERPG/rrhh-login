@@ -1,5 +1,4 @@
-![Angular](https://coryrylan.com/assets/images/posts/types/angular.svg) ![Google](https://avatars3.githubusercontent.com/u/16785467?s=200&v=4)
-![Nodemailer](https://avatars2.githubusercontent.com/u/16486629?s=400&v=4)
+![Angular](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwj7y6K3n9LiAhULuRoKHSCzCOkQjRx6BAgBEAU&url=https%3A%2F%2Fblog.ninja-squad.com%2F&psig=AOvVaw2DsNXBjC663iuJO02bSfRN&ust=1559820799647098) ![Nodemailer](https://avatars2.githubusercontent.com/u/16486629?s=400&v=4)
 
 # RrhhLogin
 
