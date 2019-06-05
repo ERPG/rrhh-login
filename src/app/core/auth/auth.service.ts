@@ -42,6 +42,10 @@ export class AuthService {
 
   async sendEmail(email: string) {
     const user = await this.userService.getUserByEmail(email);
-    return await this.http.post<any>(`http://localhost:3000/sendmail`, user);
+    return this.http.post<any>(`http://localhost:3000/sendmail`, user).pipe(
+      map(data => {
+        return data;
+      })
+    );
   }
 }

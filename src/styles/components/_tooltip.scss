@@ -1,4 +1,4 @@
-@import "base/_variables.scss";
+@import 'base/_variables.scss';
 
 .rl-tooltip {
   display: block;
@@ -13,9 +13,10 @@
     text-align: center;
     border-radius: 6px;
     margin: 0 auto;
-    margin-top: 25px;
+    top: -9px;
+    // margin-top: 25px;
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: -6px;
       left: 50%;

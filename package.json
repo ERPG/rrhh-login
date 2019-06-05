@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve && node server.js",
+    "build-prod": "ng build --aot --prod --build-optimizer",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

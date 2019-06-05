@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AuthService } from "src/app/core/auth/auth.service";
-import { FormValidationsService } from "src/app/shared/services/form-validations.service";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/auth/auth.service';
+import { FormValidationsService } from 'src/app/shared/services/form-validations.service';
 
 @Component({
-  selector: "app-forgot-password",
-  templateUrl: "./forgot-password.component.html",
-  styleUrls: ["./forgot-password.component.scss"]
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
   public forgotPassword: FormGroup;
@@ -16,7 +16,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit() {
     this.forgotPassword = this.formB.group({
-      email: ["", [Validators.required, FormValidationsService.emailValidator]]
+      email: ['', [Validators.required, FormValidationsService.emailValidator]]
     });
   }
 
@@ -24,11 +24,13 @@ export class ForgotPasswordComponent implements OnInit {
     setTimeout(() => {
       this.forgotPassword.reset();
       this.showText = false;
-      this.text = "";
-    }, 3000);
+      this.text = '';
+    }, 5000);
   }
 
   async submit(): Promise<any> {
+    this.showText = true;
+    this.text = 'Estamos procesando su petición...';
     const { email } = this.forgotPassword.value;
     // stop here if form is invalid
     if (this.forgotPassword.invalid) {
@@ -38,13 +40,13 @@ export class ForgotPasswordComponent implements OnInit {
     promise.subscribe(
       data => {
         this.showText = true;
-        this.text = "Un email fue enviado a usted con su clave de acceso.";
+        this.text = 'Un email fue enviado a usted con su clave de acceso.';
         this.resetForm();
         // console.log(data);
       },
       (response: string) => {
         this.showText = true;
-        this.text = "Ha habido un error, por favor intente mas tarde.";
+        this.text = 'Ha habido un error, por favor intente mas tarde.';
         // Reset form
         this.resetForm();
       }

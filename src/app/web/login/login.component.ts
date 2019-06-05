@@ -1,37 +1,31 @@
-import { AuthService } from "../../core/auth/auth.service";
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { FormValidationsService } from "src/app/shared/services/form-validations.service";
-import { faUser, faUserShield } from "@fortawesome/free-solid-svg-icons";
-import { Router } from "@angular/router";
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate
-} from "@angular/animations";
+import { AuthService } from '../../core/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormValidationsService } from 'src/app/shared/services/form-validations.service';
+import { faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   animations: [
-    trigger("visible", [
+    trigger('visible', [
       state(
-        "0",
+        '0',
         style({
           opacity: 0
         })
       ),
       state(
-        "1",
+        '1',
         style({
           opacity: 1
         })
       ),
-      transition("0 => 1", animate(300)),
-      transition("1 => 0", animate(300))
+      transition('0 => 1', animate(300)),
+      transition('1 => 0', animate(300))
     ])
   ]
 })
@@ -52,28 +46,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formB.group({
-      email: ["", [Validators.required, FormValidationsService.emailValidator]],
-      password: [
-        "",
-        [Validators.required, FormValidationsService.passwordValidator]
-      ],
-      role: ["", Validators.required]
+      email: ['', [Validators.required, FormValidationsService.emailValidator]],
+      password: ['', [Validators.required, FormValidationsService.passwordValidator]],
+      role: ['', Validators.required]
     });
   }
 
   setRole(role: string): void {
-    role !== null && role === "Agente"
-      ? (this.loginForm.controls["role"].setValue("Agent"),
-        (this.selected = "Agent"))
-      : (this.loginForm.controls["role"].setValue("Admin"),
-        (this.selected = "Admin"));
+    role !== null && role === 'Agente'
+      ? (this.loginForm.controls['role'].setValue('Agent'), (this.selected = 'Agent'))
+      : (this.loginForm.controls['role'].setValue('Admin'), (this.selected = 'Admin'));
   }
 
   getRole(event: MouseEvent): void {
     const target = event.target as HTMLElement;
-    const parentElement = target.closest("div.rl-card");
-    parentElement.classList.add("selected");
-    const role = parentElement.querySelector(".rl-card__title").innerHTML;
+    const parentElement = target.closest('div.rl-card');
+    parentElement.classList.add('selected');
+    const role = parentElement.querySelector('.rl-card__title').innerHTML;
     this.setRole(role);
   }
 
@@ -81,9 +70,9 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.loginForm.reset();
       this.loadTooltip = 0;
-      this.selected = "";
-      this.error = "";
-      this.user = "";
+      this.selected = '';
+      this.error = '';
+      this.user = '';
     }, 3000);
   }
 
@@ -103,7 +92,7 @@ export class LoginComponent implements OnInit {
       },
       (response: string) => {
         this.loadTooltip = 1;
-        this.error = response["error"]["message"];
+        this.error = response['error']['message'];
         // Reset form
         this.resetForm();
       }
