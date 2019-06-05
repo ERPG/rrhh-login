@@ -1,8 +1,9 @@
-@import '../base/_variables.scss';
+@import "../base/_variables.scss";
 
 .rl-input {
-  width: 99%;
+  width: 97%;
   height: $height-form-elements;
   display: block;
   font-size: $font-size-inputs;
+  padding-left: 10px;
 }

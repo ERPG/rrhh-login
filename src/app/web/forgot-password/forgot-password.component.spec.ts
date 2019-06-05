@@ -3,6 +3,7 @@ import { Component, Input } from "@angular/core";
 import { ForgotPasswordComponent } from "./forgot-password.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { RouterTestingModule } from "@angular/router/testing";
 @Component({ selector: "app-input", template: "" })
 class InputComponent {
   @Input() type: string;
@@ -39,7 +40,12 @@ describe("ForgotPasswordComponent", () => {
         LabelComponent,
         ButtonComponent
       ],
-      imports: [FormsModule, ReactiveFormsModule, HttpClientModule],
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+      ],
       providers: [HttpClient]
     }).compileComponents();
   }));

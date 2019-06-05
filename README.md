@@ -1,26 +1,71 @@
+![Angular](https://coryrylan.com/assets/images/posts/types/angular.svg) ![Google](https://avatars3.githubusercontent.com/u/16785467?s=200&v=4)
+![Nodemailer](https://avatars2.githubusercontent.com/u/16486629?s=400&v=4)
+
 # RrhhLogin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+Human resources app for the daily login of employees.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This steps will get you through the setup process of installing and usage of the project.
 
-## Code scaffolding
+### Project contributors guide
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To ensure the best compatibility you may need node version of `v10.9`. We would recommend to use NVM (Node Version Manager) for this. You can find it [Here](https://github.com/creationix/nvm).
 
-## Build
+Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
 
-## Running unit tests
+then you can run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+nvm install `version`
+```
 
-## Running end-to-end tests
+After set node version run
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+yarn install
+```
+
+After installing all packages you just need to launch Angular dev server. Since the app also use a mail service you also need to launch the node server that receive
+this requests.
+
+To launch Angular server
+
+```
+yarn run start
+```
+
+And Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+To launch node server
+
+```
+node server.js
+```
+
+To check if server is running, navigate to `http://localhost:3000/`
+
+That's it, you are good to go!
+
+## Running the tests
+
+To run the tests
+
+```
+yarn run test
+```
+
+## Built With
+
+- [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0. - The web framework used
+- [nodemailer](https://nodemailer.com/about/) - Mail package
+- [Express](https://expressjs.com/es/) - node Infraestructure
+- [Rxjs](https://angular.io/guide/rx-library) - Angular state library
 
 ## Further help
 

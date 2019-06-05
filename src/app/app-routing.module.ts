@@ -5,7 +5,7 @@ import { WebModule } from "./web/web.module";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () => WebModule
+    loadChildren: () => import("./web/web.module").then(m => m.WebModule)
   }
 ];
 

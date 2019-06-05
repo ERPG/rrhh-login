@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
   public loadTooltip: number;
   public user: string;
   public isLoggedIn: boolean;
+  public removeSelected = false;
 
   constructor(private formB: FormBuilder, private authService: AuthService) {}
 
@@ -80,6 +81,9 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.loginForm.reset();
       this.loadTooltip = 0;
+      this.selected = "";
+      this.error = "";
+      this.user = "";
     }, 3000);
   }
 
