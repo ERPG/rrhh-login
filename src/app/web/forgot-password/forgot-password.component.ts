@@ -26,7 +26,7 @@ export class ForgotPasswordComponent implements OnInit {
     }, 3000);
   }
 
-  async submit(): void {
+  async submit(): Promise<any> {
     const { email } = this.forgotPassword.value;
     // stop here if form is invalid
     if (this.forgotPassword.invalid) {
